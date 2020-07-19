@@ -1,0 +1,31 @@
+# Publish all joint states -----------------------------------
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+# Position Controllers ---------------------------------------
+Waist1:
+  type: effort_controllers/JointPositionController
+  joint: Waist1
+  pid: {p: 2000.0, i: 100, d: 500.0}
+Shoulder1:
+  type: effort_controllers/JointPositionController
+  joint: Shoulder1
+  pid: {p: 50000.0, i: 100, d: 2000.0}
+Elbow1:
+  type: effort_controllers/JointPositionController
+  joint: Elbow1
+  pid: {p: 20000.0, i: 50, d: 1000.0}
+Waist2:
+  type: effort_controllers/JointPositionController
+  joint: Waist2
+  pid: {p: 2000.0, i: 50, d: 200.0}
+Shoulder2:
+  type: effort_controllers/JointPositionController
+  joint: Shoulder2
+  pid: {p: 700.0, i: 50, d: 70.0}
+Elbow2:
+  type: effort_controllers/JointPositionController
+  joint: Elbow2
+  pid: {p: 20000.0, i: 50, d: 1000.0}
+  

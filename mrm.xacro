@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+
+<robot name="mrm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    
+    <link name="base_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="2 3 0.7"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="Waist1" type="revolute">
+        <axis xyz="0 0 1" />
+        <limit effort="1000.0" lower="-3.60" upper="0.45" velocity="0.5" />
+        <origin rpy="0 0 0" xyz="0 -1 0.5"/>
+        <parent link="base_link"/>
+        <child link="link1"/>
+    </joint>
+    
+    <link name="link1">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.35" length="0.4"/>
+            </geometry>
+        </visual>
+    </link>
+    
+    <joint name="Shoulder1" type="revolute">
+        <axis xyz="0 1 0" />
+        <limit effort="1000.0" lower="-0.62" upper="1.56" velocity="0.5" />
+        <origin rpy="0 0 0" xyz="0 0 0.4"/>
+        <parent link="link1"/>
+        <child link="link2"/>
+    </joint>
+    
+    <link name="link2">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.8"/>
+            <geometry>
+                <cylinder radius="0.15" length="2.0"/>
+            </geometry>
+        </visual>
+    </link>
+     <joint name="Elbow1" type="revolute">
+        <axis xyz="0 1 0" />
+        <limit effort="1000.0" lower="-1.04" upper="0.54" velocity="0.5" />
+        <origin rpy="0 1 0" xyz="0 0 1.8"/>
+        <parent link="link2"/>
+        <child link="link3"/>
+    </joint>
+    
+    <link name="link3">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.4"/>
+            <geometry>
+                <cylinder radius="0.15" length="0.8"/>
+            </geometry>
+        </visual>
+    </link>
+
+
+    <joint name="Waist2" type="revolute">
+        <axis xyz="0 0 1" />
+        <limit effort="1000.0" lower="-0.45" upper="3.60" velocity="0.5" />
+        <origin rpy="0 0 0" xyz="0 1 0.5"/>
+        <parent link="base_link"/>
+        <child link="link12"/>
+    </joint>
+
+
+<link name="link12">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.35" length="0.4"/>
+            </geometry>
+        </visual>
+    </link>
+
+ <joint name="Shoulder2" type="revolute">
+        <axis xyz="0 1 0" />
+        <limit effort="1000.0" lower="-0.62" upper="1.56" velocity="0.5" />
+        <origin rpy="0 0 0" xyz="0 0 0.4"/>
+        <parent link="link12"/>
+        <child link="link22"/>
+    </joint>
+    
+    <link name="link22">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.8"/>
+            <geometry>
+                <cylinder radius="0.15" length="2.0"/>
+            </geometry>
+        </visual>
+    </link>
+     <joint name="Elbow2" type="revolute">
+        <axis xyz="0 1 0" />
+        <limit effort="1000.0" lower="-1.04" upper="0.54" velocity="0.5" />
+        <origin rpy="0 1 0" xyz="0 0 1.8"/>
+        <parent link="link22"/>
+        <child link="link32"/>
+    </joint>
+    
+    <link name="link32">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.4"/>
+            <geometry>
+                <cylinder radius="0.15" length="0.8"/>
+            </geometry>
+        </visual>
+    </link>   
+
+</robot> 
